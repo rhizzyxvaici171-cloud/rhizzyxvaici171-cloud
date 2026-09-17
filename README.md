@@ -177,6 +177,24 @@ The project combines software development with practical application-security co
 
 ---
 
+### 🐾 LeakHound
+
+**Secrets Scanner CLI**
+
+[View Repository →](https://github.com/rhizzyxvaici171-cloud/leakhound)
+
+LeakHound is a command-line tool that scans a codebase for accidentally committed API keys, tokens, and credentials before they end up in a public repo. It grew directly out of a real finding: during an authorized security review, I discovered an application with API keys exposed in client-side code, the kind of oversight that can quietly turn into a large, unplanned bill. LeakHound is the tool I wished had been watching that codebase from day one.
+
+It detects provider-specific formats (AWS, GitHub, Slack, Stripe, Google), private key blocks, JWTs, and generic assigned secrets, plus a Shannon-entropy fallback for custom formats that don't match a known pattern. It ships as an installable package with a `leakhound` command, a full test suite, and a GitHub Actions pipeline that tests the tool and then runs it against its own source on every push.
+
+**Focus:** Secret detection · Static analysis · CI/CD security gating · Defensive tooling
+
+<br>
+
+**Stack:** ![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white) ![GitHub Actions](https://img.shields.io/badge/-GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white) ![Pytest](https://img.shields.io/badge/-Pytest-0A9EDC?style=flat-square&logo=pytest&logoColor=white)
+
+---
+
 ### ⚔️ SkillForge: Competitive Skill Arena
 
 SkillForge is a full-stack competitive skill platform where users prove their abilities through timed tests and skill-based games, compete against one another, and progress through a structured ranking and reward system.
