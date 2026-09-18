@@ -195,6 +195,24 @@ It detects provider-specific formats (AWS, GitHub, Slack, Stripe, Google), priva
 
 ---
 
+### 🏰 Bastion
+
+**Dependency-Free Authentication API**
+
+[View Repository →](https://github.com/rhizzyxvaici171-cloud/bastion)
+
+Bastion is a full authentication API (register, login, refresh, logout, protected routes) built entirely on Python's standard library: no Flask, no JWT library, no ORM. It exists as the direct companion to TokenScope: TokenScope detects tokens with vulnerabilities like `alg: none` and algorithm confusion, and Bastion implements JWTs from scratch specifically to be immune to both, enforcing a single allowlisted algorithm rather than trusting whatever a token's header claims.
+
+It also implements refresh-token rotation with theft detection (reusing an already-rotated-out token revokes every session for that user), dual rate limiting by both email and IP to stop both credential stuffing and password spraying, and timing-safe login responses so a nonexistent email can't be distinguished from a wrong password by response time.
+
+The project's own test suite (39 tests, including a real end-to-end test that spins up the server on an actual socket) caught two genuine bugs during development: a thread-safety issue in the database layer, and access tokens that were byte-for-byte identical when issued within the same second. Both are documented in the README along with the fixes.
+
+**Focus:** Authentication · JWT security · Rate limiting · Zero-dependency engineering
+
+**Stack:** ![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white) ![GitHub Actions](https://img.shields.io/badge/-GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white) ![SQLite](https://img.shields.io/badge/-SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white)
+
+---
+
 ### ⚔️ SkillForge: Competitive Skill Arena
 
 SkillForge is a full-stack competitive skill platform where users prove their abilities through timed tests and skill-based games, compete against one another, and progress through a structured ranking and reward system.
